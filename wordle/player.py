@@ -1,0 +1,9 @@
+from .game import LetterValidity
+
+
+class WordlePlayer:
+    def __init__(self) -> None: ...
+    def prompt_word(self) -> str: ...
+    def on_guess_feedback(
+        self, guessed_word: str, word_validity: list[LetterValidity]
+    ) -> None: ...
