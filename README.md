@@ -10,10 +10,9 @@ pip install git+https://github.com/Jah135/wordle.git
 from wordle import (
     LocalWordleGame,
     LocalWordlePlayer,
-    WORD_DICTIONARY,
 )
+from dictionary import DICTIONARY
 from random import choice
-
 
 game = LocalWordleGame(choice(WORD_DICTIONARY))
 player = LocalWordlePlayer()
