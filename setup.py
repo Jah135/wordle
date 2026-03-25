@@ -8,7 +8,7 @@ setup(
     author="Elijah Hopper",
     license="MIT",
     packages=find_packages(),
-    package_data={"": ["*.txt"]},
-    include_package_data=True,
+    # package_data={"": ["*.txt"]},
+    # include_package_data=True,
     python_requires=">=3.12",
 )
