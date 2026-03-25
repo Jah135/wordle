@@ -12,16 +12,17 @@ Guess = tuple[str, list[LetterValidity]]
 
 
 class WordleGame:
-    is_done: bool = False
-    is_won: bool = False
     guess_history: list[Guess]
 
     def __init__(self) -> None:
         self.guess_history = []
 
+    @property
+    def is_done(self) -> bool: ...
+    @property
+    def is_won(self) -> bool: ...
+
     def check_validity(self, word: str) -> list[LetterValidity]: ...
-    def check_is_done(self, word: str) -> bool: ...
-    def check_is_won(self, word: str) -> bool: ...
     def make_guess(self, word: str) -> Guess:
         guess = (word, self.check_validity(word=word))
         self.guess_history.append(guess)
