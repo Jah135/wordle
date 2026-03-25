@@ -11,7 +11,7 @@ from wordle import (
     LocalWordleGame,
     LocalWordlePlayer,
 )
-from dictionary import DICTIONARY
+from dictionary import WORD_DICTIONARY
 from random import choice
 
 game = LocalWordleGame(choice(WORD_DICTIONARY))
