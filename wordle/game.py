@@ -26,7 +26,4 @@ class WordleGame:
         guess = (word, self.check_validity(word=word))
         self.guess_history.append(guess)
 
-        self.is_won = self.check_is_won(word)
-        self.is_done = self.check_is_won(word) or self.is_won
-
         return guess

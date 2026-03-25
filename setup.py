@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="wordle",
-    version="0.2.1",
+    version="0.2.2",
     description="",
     url="https://github.com/Jah135/wordle",
     author="Elijah Hopper",
