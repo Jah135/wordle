@@ -1,3 +1,20 @@
+from .game import LetterValidity, Guess
+from pyansi import AnsiStyle, Palette, PaletteColor
+
+NEUTRAL_STYLE = AnsiStyle(
+    fg=Palette(PaletteColor.Black), bg=Palette(PaletteColor.White)
+)
+CORRECT_STYLE = AnsiStyle(
+    fg=Palette(PaletteColor.Black), bg=Palette(PaletteColor.BrightGreen)
+)
+EXISTS_STYLE = AnsiStyle(
+    fg=Palette(PaletteColor.Black), bg=Palette(PaletteColor.BrightYellow)
+)
+INCORRECT_STYLE = AnsiStyle(
+    fg=Palette(PaletteColor.Black), bg=(Palette(PaletteColor.BrightBlack))
+)
+
+
 def format_letter(char: str, validity: LetterValidity | None = None) -> str:
     display = f" {char.upper()} "
     if validity == None:
@@ -9,7 +26,5 @@ def format_letter(char: str, validity: LetterValidity | None = None) -> str:
     return INCORRECT_STYLE.apply_with_reset(display)
 
 
-def format_guess(guess: str, guess_validity: list[LetterValidity]) -> str:
-    return "".join(
-        format_letter(char, validity) for char, validity in zip(guess, guess_validity)
-    )
+def format_guess(guess: Guess) -> str:
+    return "".join(format_letter(char, validity) for char, validity in zip(*guess))
