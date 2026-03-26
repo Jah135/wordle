@@ -11,4 +11,5 @@ setup(
     # package_data={"": ["*.txt"]},
     # include_package_data=True,
     python_requires=">=3.12",
+    install_requires=["pyansi @ git+https://github.com/Jah135/pyansi.git"],
 )
