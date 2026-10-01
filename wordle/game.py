@@ -8,7 +8,7 @@ class LetterValidity(IntEnum):
     Correct = 4
 
 
-Guess = tuple[str, list[LetterValidity]]
+type Guess = tuple[str, list[LetterValidity]]
 
 
 class WordleGame:
